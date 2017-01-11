@@ -1,0 +1,30 @@
+{% extends 'timeCalculator/base.html' %}
+
+{% block content %}
+    <div>
+      <br>
+        <div>
+          <form method="POST" class="post-form">{% csrf_token %}
+              {#
+              {% for field in form %}
+                <div class="fieldWrapper">
+                    {{ field.distance }}
+                    {{ field.isMeters}}
+                </div>
+              {% endfor %}#}
+              <p><label for="distance"><h1>Distancia em km!</h1></label><p>
+                <input id="distance" type="number" name="distance" min="0" step="any"/></p>
+                <button type="submit" class="save btn btn-default">Calcular</button>
+                <label>m
+                   <input id="isMeters" type="radio" name="isMeters" value="true" />
+                </label>
+                <label>Km
+                   <input id="isMeters" type="radio" name="isMeters" value="false" checked="checked"/>
+                </label>
+          </form>
+          {% if result %}
+              <h2>{{result}}</h1>
+          {% endif %}
+        </div>
+    </div>
+{% endblock %}

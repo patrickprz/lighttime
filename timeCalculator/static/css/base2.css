@@ -1,0 +1,81 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+   background-image: url('http://www.pixelstalk.net/wp-content/uploads/2016/06/Free-Images-Desktop-Nebula-HD-Wallpapers.jpg');
+   background-color: white;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-attachment: fixed;
+}
+
+h1 {
+    color: #FCA205;
+    font-family: 'Lobster';
+}
+
+.page-header {
+    background-color : #001f3f;
+    position: top;
+    top: 0px;
+    width: 100%;
+    height: 150px;
+    border: 0px solid red;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ff9400;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+.content {
+    margin-left: 40px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Lobster', cursive;
+}
+
+.post h1 a, .post h1 a:visited {
+    color: #000000;
+}
+
+.navbar-fixed-top{
+  background-color: #001f3f;
+  border-color: #111111;
+}
+
+.nav.navbar-nav.navbar-right li a {
+    color: #DDDDDD;
+}
+.navbar-header a {
+    color: #DDDDDD;
+}
+
+.btn {
+	background: #111111;
+	border-radius: 2px;
+	box-shadow: 0px 2px 4px rgba(34,62,66,.25);
+  color: #fff;
+  font-size: 10px;
+  letter-spacing: 1px;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-transition: box-shadow 1s ease;
+	transition: box-shadow 1s ease;
+}
+
+.btn:hover {
+	box-shadow: 0px 4px 4px rgba(34,62,66,.5);
+	-webkit-transition: box-shadow 1s ease;
+	transition: box-shadow 1s ease;
+}

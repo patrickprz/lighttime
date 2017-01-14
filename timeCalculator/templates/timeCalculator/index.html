@@ -10,9 +10,9 @@
             </div>
             <div class="form-group">
                 <input id="isMeters" class="control-label" type="radio" name="isMeters" value="true" />
-                <span>m</span>
+                <span class="spanColor">m</span>
                 <input id="isMeters" class="control-label" type="radio" name="isMeters" value="false" checked="checked" />
-                <span>Km</span>
+                <span class="spanColor">Km</span>
             </div>
         </div>
         <div style="float: left;" class="col-sm-offset-5">
@@ -22,8 +22,7 @@
         <br>
     </form>
     {% if result %}
-    <h2>{{result}}</h1>
-    {% endif %}
+    <h2>{{result}}</h2> {% endif %}
 </div>
 
 <br>
@@ -32,13 +31,13 @@
 
 <!-- Container (Theory) -->
 <div id="theory" class="bg-1">
-  <div class="container">
-      <div id="theoryText"class="row">
-        <h3 class="text-center">THEORY</h3>
-        <div>
-          <p class="text-center">
-            <p class="lead">How does it work??</p>
-            <span style="">
+    <div class="container">
+        <div id="theoryText" class="row">
+            <h3 class="text-center">THEORY</h3>
+            <div>
+                <p class="text-center">
+                    <p class="lead">How does it work??</p>
+                    <span style="">
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               To demonstrate, use as an example a distance between the earth and a sun which is approximately 149.597.871.000m, the speed of light in the vacuum is a known constant which is approximately 299.792.458m/s. Having this information we just apply the formula and we will have the result in seconds.
               <br>
@@ -52,53 +51,53 @@
               <br>
               <strong>Δt=499=480+19=8min 19s</strong>
             </span>
-          </p>
+                </p>
+            </div>
+            <br>
+            <br>
         </div>
-        <br>
-        <br>
-      </div>
 
-    <div class="row">
-      <div class="col-xs-6">
-          <a data-pin-do="embedPin" data-pin-lang="pt" data-pin-width="medium" href="https://br.pinterest.com/pin/322640760790395291/"></a>
-      </div>
-      <div class="col-xs-6">
-          <a data-pin-do="embedPin" data-pin-lang="pt" data-pin-width="medium" data-pin-terse="true" href="https://br.pinterest.com/pin/322640760790387929/"></a>
-      </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <a data-pin-do="embedPin" data-pin-lang="pt" data-pin-width="medium" href="https://br.pinterest.com/pin/322640760790395291/"></a>
+            </div>
+            <div class="col-xs-6">
+                <a data-pin-do="embedPin" data-pin-lang="pt" data-pin-width="medium" data-pin-terse="true" href="https://br.pinterest.com/pin/322640760790387929/"></a>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <!-- Footer -->
 <footer class="text-center">
-  <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
-    <span class="glyphicon glyphicon-chevron-up"></span>
-  </a><br><br>
-  <!--<p>Bootstrap Theme Made By <a href="http://www.w3schools.com" data-toggle="tooltip" title="Visit w3schools">www.w3schools.com</a></p>-->
+    <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+    </a><br><br>
+    <!--<p>Bootstrap Theme Made By <a href="http://www.w3schools.com" data-toggle="tooltip" title="Visit w3schools">www.w3schools.com</a></p>-->
 </footer>
 
 <script>
-$(document).ready(function(){
-  // Initialize Tooltip
-  $('[data-toggle="tooltip"]').tooltip();
-  // Add smooth scrolling to all links in navbar + footer link
-  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-      // Store hash
-      var hash = this.hash;
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 900, function(){
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-})
+    $(document).ready(function() {
+        // Initialize Tooltip
+        $('[data-toggle="tooltip"]').tooltip();
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+                // Store hash
+                var hash = this.hash;
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function() {
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+    })
 </script>
 {% endblock %}

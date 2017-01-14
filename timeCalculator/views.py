@@ -7,9 +7,11 @@ from django.shortcuts import redirect
 
 def calcule(distance,isMeters):
     print isMeters
-
+    measure = "m"
+    distanceShow = int(distance)
     if(isMeters == False):
-        print "Valores convertidos de km para metros"
+        #print "Valores convertidos de km para metros"
+        measure = "km"
         distance = distance*1000 #converte a distancia em km para metros
 
     lightSpeed = 299792458.0 #em m/s
@@ -20,16 +22,16 @@ def calcule(distance,isMeters):
         hourBase60 = minutes//60
         secondsBase60 = result%60
         minutesBase60 = (minutes - (hourBase60 * 60))
-        return("A luz demora: " + str(int(hourBase60)) + " Horas " + str(int(minutesBase60))+ " minutos e " + str(int(secondsBase60)) + " segundos")
+        return("At a distance of " + str(distanceShow) + measure + " the light comes on approximately: " + str(int(hourBase60)) + " Hours " + str(int(minutesBase60))+ " minutes and " + str(int(secondsBase60)) + " seconds")
     elif(result < 1):
-        return(str(result)+" segundos")
+        return("At a distance of " + str(distanceShow) + measure + " the light comes on approximately: " + str(result) + " seconds")
     else:
         minutesBase60 = result//60
         secondsBase60 = result%60
         if(minutesBase60 >= 1):
-            return("A luz demora: "+ str(int(minutesBase60)) + " minutos e " + str(int(secondsBase60)) + " segundos")
+            return("At a distance of " + str(distanceShow) + measure + " the light comes on approximately: "+ str(int(minutesBase60)) + " minutes and " + str(int(secondsBase60)) + " seconds")
         else:
-            return ("A luz demora: " + str(round(secondsBase60,2)) + " segundos")
+            return ("At a distance of " + str(distanceShow) + measure + " the light comes on approximately: " + str(round(secondsBase60,2)) + " seconds")
 
 def index(request, result=""):
     if request.method == "POST":

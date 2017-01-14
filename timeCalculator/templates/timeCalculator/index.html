@@ -1,27 +1,28 @@
-{% extends 'timeCalculator/base.html' %}
-{% block content %}
+{% extends 'timeCalculator/base.html' %} {% block content %}
 <!-- Container (Home) -->
 <div id="home" class="container text-center">
-  <br>
-  <h1>How fast is the light?</h1>
+    <br>
+    <h1>How fast is the light?</h1>
     <form method="POST" class="post-form">{% csrf_token %}
-      <div class="form-inline">
-        <div class="form-group">
-          <input id="distance" class="control-label" type="number" name="distance" min="0" step="any" placeholder="Enter the distance: "/></p>
+        <div class="form-inline">
+            <div class="form-group">
+                <input id="distance" class="control-label" type="number" name="distance" min="0" step="any" placeholder="Enter the distance: " /></p>
+            </div>
+            <div class="form-group">
+                <input id="isMeters" class="control-label" type="radio" name="isMeters" value="true" />
+                <span>m</span>
+                <input id="isMeters" class="control-label" type="radio" name="isMeters" value="false" checked="checked" />
+                <span>Km</span>
+            </div>
         </div>
-        <div class="form-group">
-          <label>m
-            <input id="isMeters" class="control-label" type="radio" name="isMeters" value="true" />
-          </label>
-          <label>Km
-            <input id="isMeters" class="control-label" type="radio" name="isMeters" value="false" checked="checked"/>
-          </label>
+        <div style="float: left;" class="col-sm-offset-5">
+            <button type="submit" class="save btn btn-default"><span class="glyphicon glyphicon-time"></span> GO!</button>
         </div>
-       </div>
-       <button type="submit" class="save btn btn-default"><span class="glyphicon glyphicon-time"></span> GO!</button>
+        <br>
+        <br>
     </form>
     {% if result %}
-        <h2>{{result}}</h1>
+    <h2>{{result}}</h1>
     {% endif %}
 </div>
 
@@ -29,25 +30,40 @@
 <br>
 <br>
 
-
 <!-- Container (Theory) -->
 <div id="theory" class="bg-1">
   <div class="container">
-    <div class="row">
-      <div class="col-md-6">
+      <div id="theoryText"class="row">
         <h3 class="text-center">THEORY</h3>
-        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer mattis, lacus id pellentesque pretium, purus tortor fringilla metus, ac faucibus libero purus vitae turpis. Phasellus tempor nulla ipsum, sit amet congue ligula sagittis id. Proin eu accumsan elit, sit amet eleifend velit. Integer a lorem eu risus pulvinar fermentum mattis et lacus. Vivamus dui eros, facilisis dignissim nibh sed, suscipit condimentum est. Nam lobortis mollis leo. Nulla in nunc congue, vehicula odio a, sodales nunc. Quisque vehicula magna velit, sed cursus quam ultrices ut. Nullam faucibus turpis ut leo porta, a lobortis augue semper. Vestibulum et finibus risus. Proin in ante sit amet lectus condimentum rhoncus ut eget magna.
-
-Fusce mauris lacus, consectetur et efficitur nec, dictum in metus. Integer eu dui justo. Etiam porta, elit nec consectetur euismod, ante mi molestie sem, quis porta dui nulla non orci. Sed lectus dolor, condimentum ut ornare sit amet, bibendum a lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent a ex vel risus pellentesque cursus porta eget nulla. Nam ac tincidunt turpis. Curabitur nulla tellus, convallis et massa et, fringilla egestas diam. In ut leo neque. Vivamus auctor dui in est cursus dapibus. Nulla sodales porttitor mauris, non sollicitudin felis. Nulla porta erat dolor, et porta lectus pulvinar ac. Integer arcu eros, cursus eu ullamcorper vel, tincidunt et ligula. Sed mi dolor, finibus vitae blandit rutrum, placerat eget felis. Cras enim dui, vestibulum nec imperdiet at, semper sit amet est. In imperdiet risus enim, ut aliquam dolor malesuada semper.
-
-Ut semper dui id nibh vestibulum, et ornare nunc sodales. Integer semper arcu non justo venenatis egestas. Morbi porta nulla quis dignissim congue. Vestibulum ac ultricies risus, ac condimentum elit. Suspendisse malesuada molestie sapien, in ornare neque faucibus at. Sed quis massa at magna fermentum ultrices in porttitor enim. Nullam pretium, tortor volutpat interdum aliquet, ante nisl auctor mauris, eu tincidunt lectus elit in sem. Pellentesque eu nulla nec arcu elementum ultrices et in odio. Cras semper mattis lectus id varius. Vestibulum bibendum, nisl in dignissim tempus, neque odio commodo odio, id ultricies velit tellus id orci. Vestibulum congue eros nec quam viverra tempus. In porta, tellus auctor faucibus dignissim, justo risus pellentesque sem, vitae ultricies tellus nibh vel lorem. Praesent venenatis, neque ac sagittis mattis, ipsum ex tempor tellus, quis congue nibh urna id orci. In non odio hendrerit, euismod tortor in, tristique ante.
-
-Sed lorem dui, facilisis non lorem pharetra, hendrerit aliquam leo. Cras mollis, purus eu condimentum condimentum, arcu ligula elementum justo, non varius nisl tellus sed urna. Nunc quis fermentum purus. Pellentesque consectetur id est sed semper. Nam sem dui, pharetra sit amet arcu eu, gravida laoreet nibh. Duis venenatis vestibulum lorem vel euismod. Duis ultrices magna lobortis hendrerit venenatis. In cursus laoreet eros, ut imperdiet lorem egestas ac.
-
-Vestibulum finibus ante at ullamcorper egestas. Cras commodo imperdiet tempus. Suspendisse non nisi ex. Sed auctor justo dolor, sit amet luctus velit dictum sit amet. Donec commodo, eros id pharetra ultricies, ipsum metus venenatis nisi, quis hendrerit risus ante in tellus. Sed varius libero ipsum, congue viverra elit tempor ac. Nulla posuere tellus a orci pellentesque vestibulum. Morbi ultricies sagittis sapien. Aenean pulvinar venenatis velit vel porttitor. Vivamus sollicitudin metus ut justo dignissim, vel mattis lectus eleifend. Pellentesque feugiat, felis sit amet placerat mattis, metus nisi molestie dolor, non pellentesque mi metus vitae leo.</p>
+        <div>
+          <p class="text-center">
+            <p class="lead">How does it work??</p>
+            <span style="">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              To demonstrate, use as an example a distance between the earth and a sun which is approximately 149.597.871.000m, the speed of light in the vacuum is a known constant which is approximately 299.792.458m/s. Having this information we just apply the formula and we will have the result in seconds.
+              <br>
+              <br>
+              <strong>Δt = ΔxVm= 149.597.871.000/299.792.458 = 499,00478s</strong>
+              <br>
+              <br>
+              <b>Warning!!</b>
+              It is important to remember that if you want to have the result in minutes or hours it is necessary to make a conversation taking care of the bases because our system of measurement of time works with base 60 and the calculations are in base 10, that is to say ...
+              <br>
+              <br>
+              <strong>Δt=499=480+19=8min 19s</strong>
+            </span>
+          </p>
+        </div>
+        <br>
+        <br>
       </div>
-      <div class="col-md-6">
-        <a data-pin-do="embedPin" data-pin-lang="pt" data-pin-width="medium" data-pin-terse="true" href="https://br.pinterest.com/pin/322640760790387929/"></a>
+
+    <div class="row">
+      <div class="col-xs-6">
+          <a data-pin-do="embedPin" data-pin-lang="pt" data-pin-width="medium" href="https://br.pinterest.com/pin/322640760790395291/"></a>
+      </div>
+      <div class="col-xs-6">
+          <a data-pin-do="embedPin" data-pin-lang="pt" data-pin-width="medium" data-pin-terse="true" href="https://br.pinterest.com/pin/322640760790387929/"></a>
       </div>
     </div>
   </div>

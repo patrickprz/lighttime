@@ -244,23 +244,7 @@
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
-
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#home">HowFastIsTheLight?</a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#home">HOME</a></li>
-                    <li><a href="#theory">THEORY</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="backgroundImg">
-        {% block content %} {% endblock %}
-    </div>
+    {% block content %} {% endblock %}
 </body>
 
 </html>

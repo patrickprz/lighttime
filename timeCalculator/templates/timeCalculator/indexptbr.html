@@ -1,5 +1,5 @@
 {% extends 'timeCalculator/base.html' %} {% block content %}
-<!-- Container (Home) -->
+
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -7,21 +7,22 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#home">HOME</a></li>
-                <li><a href="#theory">THEORY</a></li>
-                <li><a href="/ptbr"><b>PT-BR</b></a></li>
+                <li><a href="#home">INICIO</a></li>
+                <li><a href="#theory">TEORIA</a></li>
+                <li><a href="/"><b>EN-US</b></a></li>
             </ul>
         </div>
     </div>
 </nav>
 <div class="backgroundImg">
+    <!-- Container (Home) -->
     <div id="home" class="container text-center">
         <br>
-        <h1>How fast is the light?</h1>
+        <h1>O quão rápida é a luz?</h1>
         <form method="POST" class="post-form">{% csrf_token %}
             <div class="form-inline">
                 <div class="form-group">
-                    <input id="distance" class="control-label" type="number" name="distance" min="0" step="any" placeholder="Enter the distance: " /></p>
+                    <input id="distance" class="control-label" type="number" name="distance" min="0" step="any" placeholder="Digite a distância: " /></p>
                 </div>
                 <div class="form-group">
                     <input id="isMeters" class="control-label" type="radio" name="isMeters" value="true" />
@@ -48,24 +49,24 @@
     <div id="theory" class="bg-1">
         <div class="container">
             <div id="theoryText" class="row">
-                <h3 class="text-center">THEORY</h3>
+                <h3 class="text-center">TEORIA</h3>
                 <div>
                     <p class="text-center">
-                        <p class="lead">How does it work??</p>
+                        <p class="lead">Como isso funciona??</p>
                         <span style="">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                To demonstrate, use as an example a distance between the earth and a sun which is approximately 149.597.871.000m, the speed of light in the vacuum is a known constant which is approximately 299.792.458m/s. Having this information we just apply the formula and we will have the result in seconds.
-                <br>
-                <br>
-                <strong>Δt = ΔxVm= 149.597.871.000/299.792.458 = 499,00478s</strong>
-                <br>
-                <br>
-                <b>Warning!!</b>
-                It is important to remember that if you want to have the result in minutes or hours it is necessary to make a conversation taking care of the bases because our system of measurement of time works with base 60 and the calculations are in base 10, that is to say...
-                <br>
-                <br>
-                <strong>Δt = 499 = 480 + 19 = 8min 19s</strong>
-              </span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Para demonstrar, vamos utilizar como exemplo a distância entre a terra e o sol que é de aproximadamente 149.597.871.000m, a velocidade da luz no vácuo é uma constante conhecida que é de aproximadamente 299.792.458m/s. Tendo posse destas informaçãos basta apenas aplicarmos a fórmula e teremos o resultado em segundos.
+                    <br>
+                    <br>
+                    <strong>Δt = ΔxVm= 149.597.871.000/299.792.458 = 499,00478s</strong>
+                    <br>
+                    <br>
+                    <b>Atencao!!</b>
+                    É importante lembrar que se você quiser ter o resultado em minutos ou horas é necessário fazer uma conversao, tendo cuidado com as bases, pois, nosso sistema de medição de tempo funciona com base 60 e os cálculos estão na base 10, isto quer dizer...
+                    <br>
+                    <br>
+                    <strong>Δt = 499 = 480 + 19 = 8min 19s</strong>
+                  </span>
                     </p>
                 </div>
                 <br>
@@ -82,30 +83,38 @@
             </div>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer class="text-center">
-        <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
-            <span class="glyphicon glyphicon-chevron-up"></span>
-        </a><br><br>
-    </footer>
-
 </div>
+<!-- Footer -->
+<footer class="text-center">
+    <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+    </a><br><br>
+    <!--<p>Bootstrap Theme Made By <a href="http://www.w3schools.com" data-toggle="tooltip" title="Visit w3schools">www.w3schools.com</a></p>-->
+</footer>
 
 <script>
     $(document).ready(function() {
+        // Initialize Tooltip
         $('[data-toggle="tooltip"]').tooltip();
+        // Add smooth scrolling to all links in navbar + footer link
         $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+            // Make sure this.hash has a value before overriding default behavior
             if (this.hash !== "") {
+                // Prevent default anchor click behavior
                 event.preventDefault();
+                // Store hash
                 var hash = this.hash;
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
                 $('html, body').animate({
                     scrollTop: $(hash).offset().top
                 }, 900, function() {
+                    // Add hash (#) to URL when done scrolling (default click behavior)
                     window.location.hash = hash;
                 });
-            }
+            } // End if
         });
     })
 </script>
+
 {% endblock %}

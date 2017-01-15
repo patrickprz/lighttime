@@ -65,7 +65,7 @@ def calculate(distance, isMeters, language="enus"):
         minutesBase60 = (minutes - (hoursBase60 * 60))
         return(resultString + str(int(hoursBase60)) + " " + hoursText +" " + str(int(minutesBase60))+ " " + minutesText + " " + str(int(secondsBase60)) + " " + secondsText)
     elif(result < 1):
-        return(resultString + str(result) + " seconds")
+        return(resultString + str(result) + " " + secondsText)
     else:
         minutesBase60 = result//60
         secondsBase60 = result%60
